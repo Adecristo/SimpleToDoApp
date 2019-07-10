@@ -2,7 +2,7 @@ from django.db import models
 
 class ToDoItem(models.Model):
     Content = models.TextField()
-    Completed = models.BooleanField()
+    Completed = models.BooleanField(default = False)
     Author = models.TextField()
     #todo:
     #Data = models.DateField(default = 0)

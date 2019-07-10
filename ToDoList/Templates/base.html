@@ -7,8 +7,13 @@
         <h3>Things to do:</h3>
         <ul>
             {% for todo_item in all_items %}
-                <li>{{ todo_item }}</li>
+                <li>{{ todo_item }} | <a href="/delete/{{todo_item.id}}">Delete</a></li>
             {% endfor %}
         </ul>
+        <form action="/addItem/" method="POST">
+           {% csrf_token %}
+            <input type="text" name="Content">
+            <input type="submit" value="Add task!" name="Add">
+        </form>
     </body>
 </html>
